@@ -1,12 +1,34 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8;
 
-// TODO: understand the point of the events (remove if useless)
+contract MultiSigWallet {
+    event Deposit(address indexed sender, uint amount, uint balance);
+    event SubmitTransaction(
+        address indexed owner,
+        uint indexed txIndex,
+        address indexed to,
+        uint value,
+        bytes data
+    );
+    event ConfirmTransaction(address indexed owner, uint indexed txIndex);
+    event RevokeConfirmation(address indexed owner, uint indexed txIndex);
+    event ExecuteTransaction(address indexed owner, uint indexed txIndex);
 
-contract MultiSigTutorial {
     address[] public owners;
     mapping(address => bool) public isOwner;
     uint public numConfirmationsRequired;
+
+    struct Transaction {
+        address to;
+        uint value;
+        bytes data;
+        bool executed;
+        uint numConfirmations;
+    }
+
+    mapping(uint => mapping(address => bool)) public isConfirmed;
+
+    Transaction[] public transactions;
 
     modifier onlyOwner() {
         require(isOwner[msg.sender], 'not owner');
@@ -27,34 +49,6 @@ contract MultiSigTutorial {
         require(!isConfirmed[_txIndex][msg.sender], 'tx already confirmed');
         _;
     }
-
-    struct Transaction {
-        address to;
-        uint value;
-        bytes data;laration
-            // Up to 3 parameters can be indexed.
-            // Indexed parameters helps you filter the logs by the indexed parameter
-            event Log(address indexed sender, string message);
-            event AnotherLog();
-        bool executed;
-        uint numConfirmations;
-    }
-
-    // mapping from tx index => owner => bool
-    mapping(uint => mapping(address => bool)) public isConfirmed;
-
-    Transaction[] public transactions;
-
-    event Deposit(address indexed sender, uint amount, uint balance);
-    event SubmitTransaction(
-        address indexed owner,
-        uint indexed txIndex,
-        address indexed to,
-        uint value,
-        bytes data
-    );
-    event ConfirmTransaction(address indexed owner, uint indexed txIndex);
-    event ExecuteTransaction(address indexed owner, uint indexed txIndex);
 
     constructor(address[] memory _owners, uint _numConfirmationsRequired) {
         require(_owners.length > 0, 'owners required');
@@ -113,6 +107,19 @@ contract MultiSigTutorial {
         require(success, 'tx failed');
 
         emit ExecuteTransaction(msg.sender, _txIndex);
+    }
+
+    function revokeConfirmation(
+        uint _txIndex
+    ) public onlyOwner txExists(_txIndex) notExecuted(_txIndex) {
+        Transaction storage transaction = transactions[_txIndex];
+
+        require(isConfirmed[_txIndex][msg.sender], 'tx not confirmed');
+
+        transaction.numConfirmations -= 1;
+        isConfirmed[_txIndex][msg.sender] = false;
+
+        emit RevokeConfirmation(msg.sender, _txIndex);
     }
 
     function getOwners() public view returns (address[] memory) {

@@ -17,7 +17,7 @@
 
 ## TODO
 
--   extend `IERC20` from `openzeppelin`
+-   extend `IERC20` or `ERC20` from `openzeppelin`
 -   [ ] `mint` multisig function
 -   [ ] `split` / `double` multisig function
 -   [ ] `burn` multisig function

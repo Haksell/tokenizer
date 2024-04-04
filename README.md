@@ -43,5 +43,6 @@
 -   https://remix.ethereum.org/
 -   https://www.codewars.com/kata/search/solidity?q=&xids=completed&beta=false&order_by=total_completed%20desc
 -   https://ethereum.org/en/developers/docs/
+-   https://solidity-by-example.org/
 -   https://sepolia.etherscan.io/
 -   https://sepolia.otterscan.io/

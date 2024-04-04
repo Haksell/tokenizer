@@ -24,7 +24,7 @@
 
 ## TODO
 
--   extend `IERC20` or `ERC20` from `openzeppelin`
+-   [ ] extend `IERC20` or `ERC20` from `openzeppelin`
 -   [ ] `mint` multisig function
 -   [ ] `split` / `double` multisig function
 -   [ ] `burn` multisig function
@@ -40,9 +40,9 @@
 -   https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
 -   https://www.investopedia.com/news/what-erc20-and-what-does-it-mean-ethereum/
 -   https://sepolia-faucet.pk910.de/
--   https://remix.ethereum.org/
 -   https://www.codewars.com/kata/search/solidity?q=&xids=completed&beta=false&order_by=total_completed%20desc
 -   https://ethereum.org/en/developers/docs/
 -   https://solidity-by-example.org/
 -   https://sepolia.etherscan.io/
 -   https://sepolia.otterscan.io/
+-   https://remix.ethereum.org/ (IDE and tutorials)

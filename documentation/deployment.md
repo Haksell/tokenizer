@@ -24,7 +24,7 @@ From now on, the Metamask extension will sometimes ask for confirmation. Always 
 -   Click on `Deploy`.
 -   You should see a MetaMask popup.
 
-![confirm metamask](/documentation/images/metamask_confirm.png)
+![confirm metamask](/documentation/images/confirm_metamask.png)
 
 -   Confirm. Wait. Congratulations, you have deployed your own shitcoin.
 

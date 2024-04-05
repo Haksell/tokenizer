@@ -6,6 +6,6 @@
 
 ![connect metamask](/documentation/images/mmconnect.png)
 
--   Select OpenZeppelin's ERC20 template
--   Remove `scripts` and `tests` folders
--   Copy code from `code/OogaBooga42.sol`
+-   Select OpenZeppelin's ERC20 template.
+-   Remove `scripts` and `tests` folders.
+-   Copy code from [OogaBooga42.sol](/code/OogaBooga42.sol).

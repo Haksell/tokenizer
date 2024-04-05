@@ -4,7 +4,7 @@
 -   Visit https://remix.ethereum.org/
 -   Connect all 4 MetaMask accounts to https://remix.ethereum.org/.
 
-![connect metamask](/documentation/images/metamask_connect.png)
+![connect metamask](/documentation/images/mmconnect.png)
 
 -   Select OpenZeppelin's ERC20 template
 -   Remove `scripts` and `tests` folders

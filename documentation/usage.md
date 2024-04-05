@@ -45,3 +45,15 @@ From now on, the Metamask extension will sometimes ask for confirmation. Always 
 ![send some tokens](/documentation/images/send.png)
 
 -   Confirm. Wait. Account 1 should have 999.9 OB42. Account 2 should have 0.01 OB42.
+
+### Mint (multisig)
+
+-   Multisig is not part of the ERC20 standard, so MetaMask does not have an interface. Go back to the `Deploy` tab in [Remix](https://remix.ethereum.org/).
+-   Expand the deployed contract.
+-   From one of the owner accounts, enter `0xSOMEADDRESS,42000000000000000000`. Click `submitOperation`. Confirm. Wait. There are 18 zeros, because it is the number of decimals of our token. This operation will create 42 OB42 out of thin air. But we need approval first.
+-   Since this is the first multisig operation, it is index 0. Enter 0 in `confirmOperation`. Confirm. Wait.
+-   Switch to another owner account. Enter 0 in `confirmOperation`. Confirm. Wait.
+-   2 owners have signed the operation, so we can execute it. Enter 0 in `executeOperation`. Confirm. Wait.
+-   Click `totalSupply`. There should be 1042 OB42. Congratulations, you have printed money.
+
+![multisig success](/documentation/images/multisig_success.png)

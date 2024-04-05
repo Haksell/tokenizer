@@ -2,7 +2,7 @@
 
 ## What is Ethereum?
 
-Ethereum is a decentralized, open-source blockchain system featuring smart contract functionality. It's a platform that allows developers to build and deploy decentralized applications (dApps) and cryptocurrencies. Ethereum is often referred to as a computer on the blockchain because of its ability to execute code on a global network of computers. This technology not only supports its native cryptocurrency, Ether (ETH), but also enables independent applications and tokens to coexist. [More](https://ethereum.org/en/developers/docs/intro-to-ethereum/)
+Ethereum is a decentralized, open-source blockchain system featuring smart contract functionality. It's a platform that allows developers to build and deploy decentralized applications (dApps) and cryptocurrencies. Ethereum is often referred to as a computer on the blockchain because of its ability to execute code on a global network of computers. This technology not only supports its native cryptocurrency, Ether (ETH), but also enables independent applications and tokens to coexist. Solidity is the most used programming language to build Ethereum contracts. [More](https://ethereum.org/en/developers/docs/intro-to-ethereum/)
 
 ## What is ERC20?
 

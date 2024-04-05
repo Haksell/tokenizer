@@ -33,3 +33,15 @@ From now on, the Metamask extension will sometimes ask for confirmation. Always 
 ![congratulations](/documentation/images/contracts_list.png)
 
 ## Usage
+
+-   Copy the contract address.
+-   Import it on each account in MetaMask. The owner should have 1000 OB42. All other accounts should have 0.
+
+### Send (mandatory)
+
+-   From Account 1, click Send.
+-   Choose Account 2. Asset: OB42, Amount: 0.1 OB42. Next.
+
+![send some tokens](/documentation/images/send.png)
+
+-   Confirm. Wait. Account 1 should have 999.9 OB42. Account 2 should have 0.01 OB42.

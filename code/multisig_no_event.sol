@@ -11,7 +11,6 @@ contract MultiSigWallet {
     struct Transaction {
         address to;
         uint value;
-        bytes data;
         bool executed;
         uint numConfirmations;
     }
@@ -61,9 +60,9 @@ contract MultiSigWallet {
 
     // === MULTISIG METHODS ===
 
-    function submitTransaction(address _to, uint _value, bytes memory _data) public onlyOwner {
+    function submitTransaction(address _to, uint _value) public onlyOwner {
         transactions.push(
-            Transaction({to: _to, value: _value, data: _data, executed: false, numConfirmations: 0})
+            Transaction({to: _to, value: _value, executed: false, numConfirmations: 0})
         );
     }
 
@@ -88,7 +87,7 @@ contract MultiSigWallet {
     ) public onlyOwner txExists(_txIndex) notExecuted(_txIndex) {
         Transaction storage transaction = transactions[_txIndex];
         require(transaction.numConfirmations >= numConfirmationsRequired, 'cannot execute tx');
-        (bool success, ) = transaction.to.call{value: transaction.value}(transaction.data);
+        (bool success, ) = transaction.to.call{value: transaction.value}('');
         require(success, 'tx failed');
         transaction.executed = true;
     }
@@ -105,17 +104,12 @@ contract MultiSigWallet {
 
     function getTransaction(
         uint _txIndex
-    )
-        public
-        view
-        returns (address to, uint value, bytes memory data, bool executed, uint numConfirmations)
-    {
+    ) public view returns (address to, uint value, bool executed, uint numConfirmations) {
         Transaction storage transaction = transactions[_txIndex];
 
         return (
             transaction.to,
             transaction.value,
-            transaction.data,
             transaction.executed,
             transaction.numConfirmations
         );

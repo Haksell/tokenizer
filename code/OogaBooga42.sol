@@ -4,6 +4,17 @@ pragma solidity ^0.8;
 import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 import '@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol';
 
+/*
+openzeppelin's ERC20 contract implements:
+- ERC20 protocol: totalSupply, balanceOf, transfer, approve, allowance, transferFrom
+- Token information: name, symbol, decimals
+- Token administration: mint, burn
+
+openzeppelin's ERC20Permit contract implements additional methods for optimization,
+broader ecosystem compatibility and potential future use cases that may arise. We don't
+use it yet but it was recommended by Remix's ERC20 template.
+*/
+
 contract OogaBooga42 is ERC20, ERC20Permit {
     // === STRUCTURES ===
 

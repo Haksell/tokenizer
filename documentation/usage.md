@@ -50,7 +50,7 @@ From now on, the Metamask extension will sometimes ask for confirmation. Always 
 
 -   Multisig is not part of the ERC20 standard, so MetaMask does not have an interface. Go back to the `Deploy` tab in [Remix](https://remix.ethereum.org/).
 -   Expand the deployed contract.
--   From one of the owner accounts, enter `0xSOMEADDRESS,42000000000000000000`. Click `submitOperation`. Confirm. Wait. There are 18 zeros, because it is the number of decimals of our token. This operation will create 42 OB42 out of thin air. But we need approval first.
+-   From one of the owner accounts, enter `0xaddress4,42000000000000000000`. Click `submitOperation`. Confirm. Wait. There are 18 zeros, because it is the number of decimals of our token. This operation will create 42 OB42 out of thin air and send it to your fourth account. But we need approval first.
 -   Since this is the first multisig operation, it is index 0. Enter 0 in `confirmOperation`. Confirm. Wait.
 -   Switch to another owner account. Enter 0 in `confirmOperation`. Confirm. Wait.
 -   2 owners have signed the operation, so we can execute it. Enter 0 in `executeOperation`. Confirm. Wait.

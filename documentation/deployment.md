@@ -13,3 +13,19 @@
 -   Visit the Deploy tab on the left.
 
 ![deploy tab](/documentation/images/deploytab.png)
+
+-   Select the MetaMask provider.
+
+![injected provider](/documentation/images/injected_provider.png)
+
+From now on, the Metamask extension will sometimes ask for confirmation. Always accept.
+
+-   In the Deploy section, write `[0xaddress1,0xaddress2,0xaddress3],2`, replacing with the addresses of the 3 owners you want for this token.
+-   Click on `Deploy`.
+-   You should see a MetaMask popup.
+
+![confirm metamask](/documentation/images/metamask_confirm.png)
+
+-   Confirm. Wait. Congratulations, you have deployed your own shitcoin.
+
+![congratulations](/documentation/images/contracts_list.png)
